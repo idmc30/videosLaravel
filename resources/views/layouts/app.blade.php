@@ -44,12 +44,20 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <form action="" class="form-inline" role="search">
-                          
-                             <input type="text" class="form-control" placeholder="¿Que quieres ver?" name="search">                     
-
-                            <button type="button" class="btn btn-default ">
-                            <span class="fa fa-search" aria-hidden="true"></span>
+                        <div class="form-group">
+                         <input type="text" class="form-control" placeholder="¿Que quieres ver?" name="search">                     
+                        </div>
+                        
+                        <div class="form-group">
+                        <button type="button" class="btn btn-default " style="margin-left: 10px;">
+                              <span class="fa fa-search" aria-hidden="true"></span>
                             </button>
+                        </div>
+                      
+                            
+                        
+                       
+
                                      
                            
                         </form>
