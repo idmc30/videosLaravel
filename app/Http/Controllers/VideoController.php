@@ -20,4 +20,15 @@ class VideoController extends Controller
 
    }
 
+   public function saveVideo(Request $request){
+    //validar formulario
+    $validatedata = $this->validate($request, [
+         'title'=>'required1|min:5',
+         'description'=>'required',
+         'video'=>'mimes:mp4'
+
+    ]);
+
+   }
+
 }
