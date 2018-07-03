@@ -17,15 +17,15 @@
     @endif
      <div class="form group">
        <label for="title">Titulo</label>
-       <input type="text" class="form-control" id="title" name="title">
+       <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}">
      </div>
      <div class="form group">
        <label for="description">Descripcion</label>
-       <textarea class="form-control" id="description" name="description"></textarea>
+       <textarea class="form-control" id="description" name="description"> {{old('description')}}</textarea>
      </div>
      <div class="form group">
        <label for="image">Miniatura</label>
-       <input type="file" class="form-control" id="image" name="image"/>
+       <input type="file" class="form-control" id="image" name="image" />
      </div>
      <div class="form group">
        <label for="video">Archivo de Video</label>
