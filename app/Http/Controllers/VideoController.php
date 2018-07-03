@@ -28,7 +28,19 @@ class VideoController extends Controller
          'video'=>'mimes:mp4'
 
     ]);
-    
+
+    $video= new Video();
+    $user = \Auth::user();//conseguimos el usuario
+    $video->user_id=$user->id;
+    $video->title = $request->input('title');
+    $video->description= $request->input('description');
+
+    $video->save();
+
+    return redirect()->route('home')->with(array(
+     "message"=> 'El video se ha subiro correctamente!!'
+    ));
+
    }
 
 }

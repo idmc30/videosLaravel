@@ -3,8 +3,8 @@
 <div class="container">
     <h2>Creando video</h2>
     <hr>
-    <div class="row">
-    <form action="{{route('saveVideo')}}" method="post" enctype="multipart/forma-data" class="col-lg-7">
+    <div class="row">  
+    <form action="{{route('saveVideo')}}" method="post" enctype="multipart/form-data" class="col-lg-7">
     {{csrf_field()}}
     @if($errors->any())
        <div class="alert alert-danger">
