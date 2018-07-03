@@ -4,7 +4,17 @@
     <h2>Creando video</h2>
     <hr>
     <div class="row">
-    <form action="" method="post" ectype="multipart/forma-data" class="col-lg-7">
+    <form action="{{route('saveVideo')}}" method="post" enctype="multipart/forma-data" class="col-lg-7">
+    {{csrf_field()}}
+    @if($errors->any())
+       <div class="alert alert-danger">
+         <ul>
+             @foreach($errors->all()  as $error)
+                <li>{{$error}}</li>
+             @endforeach         
+         </ul>
+       </div>
+    @endif
      <div class="form group">
        <label for="title">Titulo</label>
        <input type="text" class="form-control" id="title" name="title">
