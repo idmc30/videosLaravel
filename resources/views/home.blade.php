@@ -14,8 +14,14 @@
                  @foreach($videos as $video)
                      <li class="video-item col-md-4 pull-left">
                         <!-- imangen de video -->
-
-
+                        @if(Storage::disk('images')->has($video->image)) {{-- has sirve para comprobar si existe o no la imagen --}}
+                        <div class="vide-image-thumb">
+                           <div class="col-md-6 col-md-offset-3">
+                             <img src="{{ url('/miniatura/'.$video->image)}}"/>
+                           </div>
+                        </div>
+                        
+                        @endif
                         <div class="data">
                           <h4>{{$video->title}}</h4>
                         </div>
