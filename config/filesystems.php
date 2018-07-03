@@ -54,7 +54,21 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+      //agregamos dos discos para subir imagenes y videos
+        'images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/images'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
 
+        'videos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/videos'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+//===========================
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
