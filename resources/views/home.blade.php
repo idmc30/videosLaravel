@@ -10,26 +10,34 @@
                </div>
               @endif
 
-              <ul class="videos-list">
+              <div class="videos-list">
                  @foreach($videos as $video)
-                     <li class="video-item col-md-4 pull-left">
-                        <!-- imangen de video -->
-                        @if(Storage::disk('images')->has($video->image)) {{-- has sirve para comprobar si existe o no la imagen --}}
-                        <div class="vide-image-thumb">
-                           <div class="col-md-6 col-md-offset-3">
-                             <img src="{{ url('/miniatura/'.$video->image)}}"/>
-                           </div>
-                        </div>
-                        
-                        @endif
-                        <div class="data">
-                          <h4>{{$video->title}}</h4>
-                        </div>
-                        <!-- botones de accion -->
-                    </li>
-                 @endforeach
-              
-              </ul>
+                     <div class="video-item col-md-12 pull-left panel panel-default">                          
+                         <div class="card">
+                           <div class="card-body">
+                           <div class="container"> {{--clase container--}}  
+                           <div class="row">                               
+                              @if(Storage::disk('images')->has($video->image)) {{-- has sirve para comprobar si existe o no la imagen --}}
+                              
+                                <div class="vide-image-thumb col-3">
+                                  <div class="video-image-mask">
+                                    <img src="{{ url('/miniatura/'.$video->image)}}" class="video-imagen"/>
+                                  </div>
+                                </div>
+                                
+                                @endif
+                                <div class="data col">
+                                  <h4>{{$video->title}}</h4>
+                                </div>
+                                <!-- botones de accion -->
+                             </div> 
+                            </div> 
+                          </div>  {{--fin de la clase container--}}                              
+                        </div> 
+                        <br>
+                    </div>
+                 @endforeach              
+              </div>
         </div>
         {{$videos->links()}}
         <!-- <div class="col-md-8">
