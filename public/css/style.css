@@ -13,3 +13,12 @@ body{
  width: 100px;
 
 }
+
+.video-title{
+  font-weight: bold;
+  font-size:18px;
+}
+
+.video-title a{
+   color:#444;
+}

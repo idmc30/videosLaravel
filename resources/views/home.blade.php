@@ -27,9 +27,16 @@
                                 
                                 @endif
                                 <div class="data col">
-                                  <h4>{{$video->title}}</h4>
+                                  <h4 class="video-title"><a href="">{{$video->title}}</a></h4>
+                                  <p>{{$video->user->name.' '.$video->user->surname}}</p>
+                                   <!-- botones de accion -->
+                                   <a href="" class="btn btn-outline-info">Ver</a>
+                                    @if(Auth::check() && Auth::user()->id == $video->user->id)
+                                    <a href="" class="btn btn-outline-warning">Editar</a>
+                                    <a href="" class="btn btn-outline-danger">Eliminar</a>
+                                    @endif
                                 </div>
-                                <!-- botones de accion -->
+                               
                              </div> 
                             </div> 
                           </div>  {{--fin de la clase container--}}                              
