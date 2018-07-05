@@ -66,4 +66,17 @@ class VideoController extends Controller
        return new Response($file, 200);
    }
 
+   public function getVideoPage($video_id){
+      $video= Video::find($video_id);
+      return view('video.detail',array(
+          'video'=>$video
+      ));
+   }
+   
+   public function getVideo($filename){
+    $file= Storage::disk('videos')->get($filename);
+    return new Response($file, 200);
+   }
+    
+
 }
