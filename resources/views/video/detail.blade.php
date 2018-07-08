@@ -19,7 +19,7 @@
            <div class="card">
             <div class="card-header">
                 Subido por <strong>{{$video->user->name.' '.$video->user->surname}}</strong>
-                el {{$video->created_at}}
+                {{\FormatTime::LongTimeFilter($video->created_at)}}
             </div>
             <div class="card-body">
                  {{$video->description}}
