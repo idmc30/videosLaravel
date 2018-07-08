@@ -28,9 +28,10 @@
             </hr>
               <h4>Comentarios</h4>
             </hr>
+                       
            <!-- comentarios -->
-               @include('video.comments')
-            
+               @include('video.comments')    
+
        </div>
     </div>
 
