@@ -68,8 +68,14 @@ class VideoController extends Controller
 
    public function getVideoPage($video_id){
       $video= Video::find($video_id);
+      $comments = Comment::where('video_id', $video_id)
+      ->orderBy('id','desc')
+      ->get();
+      
+    //   $videos= Video::orderBy('id','desc')->paginate(5);
       return view('video.detail',array(
-          'video'=>$video
+          'video'=>$video,
+          'comments'=>$comments
       ));
    }
    

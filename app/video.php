@@ -12,6 +12,8 @@ class video extends Model
     //relacion one to many
     public function comments(){
         return $this->hasMany('App\Comment');
+        //para poder hacer un listado ordenado se puede agrgar el orderby
+        //  return $this->hasMany('App\Comment')->orderBy('id','desc');
     }
    
     //relacion a de Muchos a uno
