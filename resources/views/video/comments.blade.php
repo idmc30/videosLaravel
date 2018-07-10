@@ -27,28 +27,32 @@
 @endif
 <br>
 </hr>
+  
 @if(isset($comments))
+    
+  <!-- comentario-->
+    {{-- este codigo va siempre y cuando en el modelo se use la clausula orderby y no en el controlador
+  como esta en este momento
+    @if(isset($video->comments))  --}}
+    
 
-<!-- este codigo va siempre y cuando en el modelo se use la clausula orderby y no en el controlador
-como esta en este momento
-   @if(isset($video->comments)) -->
-
-<div>
-<!-- @foreach($video->comments as $comment) -->
-    @foreach($comments as $comment)
-          <div class="comment-item cold-md-12 pull-left">
-            <div class="card">
-                  <div class="card-header">
-                      <strong>{{$comment->user->name.' '.$comment->user->surname}}</strong>
-                      {{\FormatTime::LongTimeFilter($comment->created_at)}}
+    <div>
+    <!--comentario -->
+    {{-- @foreach($video->comments as $comment) --}}
+        @foreach($comments as $comment)
+              <div class="comment-item cold-md-12 pull-left">
+                <div class="card">
+                      <div class="card-header">
+                          <strong>{{$comment->user->name.' '.$comment->user->surname}}</strong>
+                          {{\FormatTime::LongTimeFilter($comment->created_at)}}
+                      </div>
+                      <div class="card-body">
+                          {{$comment->body}}
+                      </div>
                   </div>
-                  <div class="card-body">
-                      {{$comment->body}}
-                  </div>
+                
               </div>
-            
-          </div>
-          </br>
-    @endforeach
-  </div>
+              </br>
+        @endforeach
+      </div>
 @endif  
