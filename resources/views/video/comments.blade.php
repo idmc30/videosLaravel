@@ -37,7 +37,8 @@
     <!-- fin de comentario -->
      
         @foreach($comments as $comment)
-              <div class="comment-item cold-md-12 pull-left">
+             <div class="comment-item cold-md-12  pull-left">
+                   <!-- Botón en HTML (lanza el modal en Bootstrap) -->                   
                 <div class="card">
                       <div class="card-header">
                           <strong>{{$comment->user->name.' '.$comment->user->surname}}</strong>
@@ -47,12 +48,13 @@
                           {{$comment->body}}
                       </div>
                   </div>
-                  @if(Auth::user()->id == $comment->user_id || Auth::user()->id == $video->user_id)
-                       <!-- Botón en HTML (lanza el modal en Bootstrap) -->
-                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Abrir ventana modal</button>
-                       <!-- Modal / Ventana / Overlay en HTML -->
-                        <!-- Modal -->
-                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          @if(Auth::user()->id == $comment->user_id || Auth::user()->id == $video->user_id)
+                  <div class="pull-right">
+                    
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#idmcmodal{{$comment->id}}">Eliminar</button>       
+                      
+                       <!-- Modal / Ventana / Overlay en HTML -->                        
+                      <div class="modal fade" id="idmcmodal{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -62,7 +64,8 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              ...
+                               <p>¿Seguro que quieres borrar este elemento?</p>
+                               <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
                             </div>
                             <div class="modal-footer">
                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -71,8 +74,10 @@
                           </div>
                         </div>
                       </div>
+                  </div>    
                 @endif
               </div>
+         
               </br>
         @endforeach
       </div>
