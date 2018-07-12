@@ -45,37 +45,46 @@
                           {{\FormatTime::LongTimeFilter($comment->created_at)}}
                       </div>
                       <div class="card-body">
-                          {{$comment->body}}
-                      </div>
-                  </div>
-          @if(Auth::user()->id == $comment->user_id || Auth::user()->id == $video->user_id)
-                  <div class="pull-right">
-                    
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#idmcmodal{{$comment->id}}">Eliminar</button>       
-                      
-                       <!-- Modal / Ventana / Overlay en HTML -->                        
-                      <div class="modal fade" id="idmcmodal{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+                         
+                          
+                          <div class="row">
+                            <div class="col-10">
+                            {{$comment->body}}
                             </div>
-                            <div class="modal-body">
-                               <p>¿Seguro que quieres borrar este elemento?</p>
-                               <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
-                            </div>
-                            <div class="modal-footer">
-                               <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                               <button type="button" class="btn btn-danger">Eliminar</button>
+                            <div class="col-2">
+                            @if(Auth::user()->id == $comment->user_id || Auth::user()->id == $video->user_id)
+                              <div class="pull-right">
+                                
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#idmcmodal{{$comment->id}}">Eliminar</button>       
+                                  
+                                  <!-- Modal / Ventana / Overlay en HTML -->                        
+                                  <div class="modal fade" id="idmcmodal{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>¿Seguro que quieres borrar este elemento?</p>
+                                          <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                          <button type="button" class="btn btn-danger">Eliminar</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>    
+                        @endif
                             </div>
                           </div>
-                        </div>
                       </div>
-                  </div>    
-                @endif
+                  </div>
+         
               </div>
          
               </br>
