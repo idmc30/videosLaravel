@@ -68,12 +68,12 @@
                                           </button>
                                         </div>
                                         <div class="modal-body">
-                                          <p>¿Seguro que quieres borrar este elemento?</p>
-                                          <p class="text-warning"><small>Si lo borras, nunca podrás recuperarlo.</small></p>
+                                          <p>¿Seguro que quieres borrar el comentario?: </p>
+                                          <p class="text-warning"><small>{{$comment->body}}</small></p>
                                         </div>
                                         <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                          <button type="button" class="btn btn-danger">Eliminar</button>
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>                                          
+                                          <a href="{{url('/delete-comment/'.$comment->id)}}" type="button" class="btn btn-danger">Eliminar</a>
                                         </div>
                                       </div>
                                     </div>
