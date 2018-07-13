@@ -52,11 +52,11 @@
                             {{$comment->body}}
                             </div>
                             <div class="col-2">
-                            @if(Auth::user()->id == $comment->user_id || Auth::user()->id == $video->user_id)
+                            @if(Auth::check() && (Auth::user()->id == $comment->user_id || Auth::user()->id == $video->user_id))
                               <div class="pull-right">
                                 
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#idmcmodal{{$comment->id}}">Eliminar</button>       
-                                  
+                                   
                                   <!-- Modal / Ventana / Overlay en HTML -->                        
                                   <div class="modal fade" id="idmcmodal{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
