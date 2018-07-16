@@ -109,5 +109,24 @@ class VideoController extends Controller
        return redirect()->route('home')->with($message);
 
    }
+   
+/*
+ Las findOrFaily firstOrFaillos
+ métodos recuperará el primer resultado de la consulta; sin embargo, si no se encuentra 
+ ningún resultado, se arrojará a:Illuminate\Database\Eloquent\ModelNotFoundException
+*/
+   public function edit($id){
+    $user= \Auth::user();
+    $video=Video::findOrFail($id);
+    if($user && $video->user_id == $user->id){     
+       return view('video.edit',array(
+           'video'=> $video
+       ));
+    }else{
+         return redirect()->route('home');
+
+    }
+   }
+  
 
 }

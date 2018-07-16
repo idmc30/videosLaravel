@@ -53,12 +53,18 @@ Route::get('/video-file/{filename}', array(
     'uses'=>'VideoController@getVideo'
 ));
 
+Route::get('/editar-video/{idvideo}', array(
+    'as'=>'videoedit',
+    'middleware'=>'auth',
+    'uses'=>'VideoController@edit'
+));
+
+
 Route::get('/delete-video/{idvideo}', array(
     'as'=>'videodelete',
     'middleware'=>'auth',
     'uses'=>'VideoController@delete'
 ));
-
 
 //comentarios
 Route::post('/comment', array(

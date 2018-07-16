@@ -33,7 +33,7 @@
                                    <a href="{{url('/video/'.$video->id)}}" class="btn btn-outline-info">Ver</a>
                                     @if(Auth::check() && Auth::user()->id == $video->user->id)
 
-                                     <a href="" class="btn btn-outline-warning">Editar</a>
+                                     <a href="{{url('/editar-video/'.$video->id)}}" class="btn btn-outline-warning">Editar</a>
                                      <!-- Eliminar video -->
                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#eliminarvideo{{$video->id}}">Eliminar</button>       
                                    
