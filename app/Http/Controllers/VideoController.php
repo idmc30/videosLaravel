@@ -128,5 +128,38 @@ class VideoController extends Controller
     }
    }
   
+   public function update($video_id,Request $request){
+     $validate= $this->validate($request, array(
+        'title'=>'required|min:5',
+        'description'=>'required',
+        'video'=>'mimes:mp4'
+     ));
+     $user= \Auth::user(); 
+     $video= Video::findOrFail($video_id);
+     $video->user_id= $user->id;
+     $video->title= $request->input('title');
+     $video->description= $request->input('description');
+
+     $image = $request->file('image');
+     //subir imagen
+     if($image){
+        $image_path= time().$image->getClientOriginalName();
+        \Storage::disk('images')->put($image_path, \File::get($image));
+        $video->image = $image_path;
+     }
+
+     //subida de el video
+     $video_file= $request->file('video');
+     if($video_file){
+         $video_path = time().$video_file->getClientOriginalName();
+         \Storage::disk('videos')->put($video_path,\File::get($video_file));
+
+         $video->video_path= $video_path;
+     } 
+     
+     $video->update();
+     return redirect()->route('home')->with(array('message'=>'Video actualizado correctamente'));
+     
+   }
 
 }

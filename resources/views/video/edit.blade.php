@@ -4,7 +4,7 @@
     <h2>Editar {{$video->title}}</h2>
     <hr>
     <div class="row">  
-    <form action="" method="post" enctype="multipart/form-data" class="col-lg-7">
+    <form action="{{route('updateVideo',$video->id)}}" method="post" enctype="multipart/form-data" class="col-lg-7">
     {{csrf_field()}}
     @if($errors->any())
        <div class="alert alert-danger">

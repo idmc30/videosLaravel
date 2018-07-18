@@ -66,6 +66,13 @@ Route::get('/delete-video/{idvideo}', array(
     'uses'=>'VideoController@delete'
 ));
 
+
+Route::post('/actualizar-video/{id}', array(
+    'as'=>'updateVideo',
+    'middleware'=>'auth',
+    'uses'=>'VideoController@update'
+));
+
 //comentarios
 Route::post('/comment', array(
     'as'=>'comment',
