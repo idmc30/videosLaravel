@@ -143,14 +143,24 @@ class VideoController extends Controller
      $image = $request->file('image');
      //subir imagen
      if($image){
+        // Delete image
+        if($video->image) {
+            Storage::disk('images')->delete($video->image);
+        }
+          //update de la imagen
         $image_path= time().$image->getClientOriginalName();
         \Storage::disk('images')->put($image_path, \File::get($image));
         $video->image = $image_path;
      }
 
-     //subida de el video
+      //video
      $video_file= $request->file('video');
      if($video_file){
+          // Delete video
+          if($video->video_path) {
+            Storage::disk('videos')->delete($video->video_path);
+        }
+
          $video_path = time().$video_file->getClientOriginalName();
          \Storage::disk('videos')->put($video_path,\File::get($video_file));
 
