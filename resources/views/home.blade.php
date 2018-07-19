@@ -11,7 +11,7 @@
               @endif
            
           
-          @include('video.videoslist');
+          @include('video.videoslist')
        
         </div>
        

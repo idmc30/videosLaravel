@@ -173,15 +173,18 @@ class VideoController extends Controller
    }
 
    public function search($search = null){
-        if(is_null($search)){
+    if (is_null($search)) {
+ 
+        if (\Request::get('search')) {
+ 
+            $search = \Request::get('search');
+            return redirect()->route('videoSearch', array('search' => $search));
+        
+        } else {
+        
             return redirect()->route('home');
-
-        }else{
-            $search= \Request::get('search');
-            return redirect()->route('videoSearch',[
-                'search'=>$search
-            ]);
         }
+    } 
 
        $video = Video::where('title', 'LIKE','%'.$search.'%')->paginate(5);
       return view('video.search',[
