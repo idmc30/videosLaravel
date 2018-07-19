@@ -38,13 +38,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <form action="" class="form-inline" role="search">
+                        <form action="{{url('/videoSearch')}}" class="form-inline" role="search">
                             <div class="form-group">
                                <input type="text" class="form-control" placeholder="¿Que quieres ver?" name="search">                     
                             </div>
 
                             <div class="form-group">
-                              <button type="button" class="btn btn-outline-secondary" style="margin-left: 10px;">Buscar</button>            
+                              <button type="submit" class="btn btn-outline-secondary" style="margin-left: 10px;">Buscar</button>            
                             </div>                                                                                                   
                         </form>
                     </ul >

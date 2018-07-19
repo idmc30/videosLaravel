@@ -73,6 +73,12 @@ Route::post('/actualizar-video/{id}', array(
     'uses'=>'VideoController@update'
 ));
 
+
+Route::get('/videoSearch/{serach?}', array(
+    'as'=>'videoSearch',
+    'uses'=>'VideoController@search'
+));
+
 //comentarios
 Route::post('/comment', array(
     'as'=>'comment',
