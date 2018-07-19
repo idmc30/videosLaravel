@@ -12,9 +12,9 @@
                     <form class="col-md-3 pull-right" action="{{url('/buscar/'.$search)}}" method="post">
                             <label for="filter">Odernar:</label>
                             <select name="" id="">
-                                <option value="">Mas nuevos primero</option>
-                                <option value="">Mas antiguos primero</option>
-                                <option value="">De la A a la Z</option>
+                                <option value="new">Mas nuevos primero</option>
+                                <option value="old">Mas antiguos primero</option>
+                                <option value="alfa">De la A a la Z</option>
                             </select>
                         </form>
                </div>            
