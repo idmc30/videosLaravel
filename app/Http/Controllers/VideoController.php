@@ -186,7 +186,7 @@ class VideoController extends Controller
         }
     } 
 
-       $video = Video::where('title', 'LIKE','%'.$search.'%')->paginate(5);
+      $video = Video::where('title', 'LIKE','%'.$search.'%')->paginate(5);
       return view('video.search',[
           'videos'=> $video,
           'search'=> $search

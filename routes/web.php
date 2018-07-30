@@ -74,7 +74,7 @@ Route::post('/actualizar-video/{id}', array(
 ));
 
 
-Route::get('/videoSearch/{serach?}', array(
+Route::get('/videoSearch/{serach?}/{filter?}', array(
     'as'=>'videoSearch',
     'uses'=>'VideoController@search'
 ));
@@ -90,3 +90,6 @@ Route::get('/delete-comment/{idcomment}', array(
     'as'=>'commentdelete',
     'uses'=>'CommentController@delete'
 ));
+
+
+//cache
