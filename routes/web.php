@@ -74,7 +74,7 @@ Route::post('/actualizar-video/{id}', array(
 ));
 
 
-Route::get('/videoSearch/{serach?}/{filter?}', array(
+Route::get('/videoSearch/{search?}/{filter?}', array(
     'as'=>'videoSearch',
     'uses'=>'VideoController@search'
 ));
@@ -92,4 +92,7 @@ Route::get('/delete-comment/{idcomment}', array(
 ));
 
 
-//cache
+//borrando cache laravel
+Route::get("/clear-cache",function (){
+    $code = Artisan::call('cache:clear');
+});

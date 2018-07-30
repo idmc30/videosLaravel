@@ -6,12 +6,13 @@
         <div class="container">
            <div class="row">
               <div class="col-md-9">
-                    <h2>Busquedas: {{$search}}</h2>
+                    <h2>Busquedas: {{$search}}</h2>                                        
+                     
                     </div>
                     <div class="col-md-3">
-                    <form class=" pull-right" action="{{url('/buscar/'.$search)}}" method="post">
+                    <form class=" pull-right" action="{{url('/videoSearch/'.$search)}}" method="get">
                             <label for="filter">Odernar:</label>
-                            <select class="form-control" name="" id="">
+                            <select class="form-control" id="filters" name="filter">
                                 <option value="new">Mas nuevos primero</option>
                                 <option value="old">Mas antiguos primero</option>
                                 <option value="alfa">De la A a la Z</option>
