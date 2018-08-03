@@ -17,7 +17,7 @@
            <!-- descripcion -->
            <div class="card">
                 <div class="card-header">
-                    Subido por <strong>{{$video->user->name.' '.$video->user->surname}}</strong>
+                    Subido por <strong><a href="{{route('channel',['user_id'=>$video->user->id])}}">  {{$video->user->name.' '.$video->user->surname}}</a></strong>
                     {{\FormatTime::LongTimeFilter($video->created_at)}}
                 </div>
                 <div class="card-body">

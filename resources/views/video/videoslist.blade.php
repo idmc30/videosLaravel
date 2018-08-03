@@ -17,7 +17,7 @@
                                 @endif
                                 <div class="data col">
                                   <h4 class="video-title"><a href="">{{$video->title}}</a></h4>
-                                  <p>{{$video->user->name.' '.$video->user->surname}}</p>
+                                    <p> <a href="{{route('channel',['user_id'=>$video->user->id])}}">  {{$video->user->name.' '.$video->user->surname}}</a>| {{\FormatTime::LongTimeFilter($video->created_at)}}</p>
                                    <!-- botones de accion -->
                                    <a href="{{url('/video/'.$video->id)}}" class="btn btn-outline-info">Ver</a>
                                     @if(Auth::check() && Auth::user()->id == $video->user->id)
