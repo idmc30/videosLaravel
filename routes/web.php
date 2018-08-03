@@ -90,7 +90,11 @@ Route::get('/delete-comment/{idcomment}', array(
     'as'=>'commentdelete',
     'uses'=>'CommentController@delete'
 ));
-
+//usuarios
+Route::get('/canal/{user_id}', array(
+    'as'=>'channel',
+    'uses'=>'UserController@channel'
+));
 
 //borrando cache laravel
 Route::get("/clear-cache",function (){
