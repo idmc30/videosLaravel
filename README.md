@@ -1,5 +1,5 @@
 # videosLaravel
-Proyecto de un mini youtube hecho con laravel **5.6**,puedes crear un canal, subir videos, comentar y seguir a otra persona que tenga su canal 
+Proyecto de un mini youtube desarrollado con laravel **5.6**,puedes crear un canal, subir videos, comentar y seguir a otra persona que tenga su canal 
 
 ## Instrucciones
 **1.** Clonar el proyecto con **git clone** o puedes descargar el **.zip**.
